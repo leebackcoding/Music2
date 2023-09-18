@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+<form method="POST" th:action="@{/searchhome}">
+    <label>아이디</label>
+  <input type="text" name="username">
+  <br>
+  <button type="submit" value="검색">검색</button>
+</form>
+</body>
+</html>

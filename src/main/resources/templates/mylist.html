@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>mylist</title>
+</head>
+<body>
+<p>
+  <span>사용자 : </span>
+  <span th:text="${music.username}"></span>
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>제목</th>
+      <th>가수</th>
+      <th>url</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="music : ${musics}">
+      <td th:text="${music.name}"></td>
+      <td th:text="${music.artist}"></td>
+      <td><a th:url="${music.url}"></a></td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

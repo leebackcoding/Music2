@@ -19,13 +19,20 @@
       <th>노래제목</th>
       <th>가수이름</th>
       <th>url</th>
+      <th>추가버튼</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="track : ${tracks}">
-      <td th:text="${track.name}"></td>
-      <td th:text="${track.artist}"></td>
-      <td><a th:href="${track.url}" th:text="${track.url}"></a></td>
+    <tr th:each="music : ${musics}">
+      <td th:text="${music.name}"></td>
+      <td th:text="${music.artist}"></td>
+      <td><a th:href="${music.url}" th:text="${music.url}"></a></td>
+      <td>
+        <form th:action="@{/user-music}" method="post">
+          <button type="submit" th:value="${music}">노래추가</button>
+        </form>
+
+      </td>
     </tr>
     </tbody>
   </table>
